@@ -7,8 +7,6 @@ from time import perf_counter, sleep
 from os import system
 import sys
 import threading
-import signal
-
 
 class SyncLightCorsairHandler:
     def __init__(self):
@@ -33,6 +31,7 @@ class SyncLightCorsairHandler:
             while True:
                 begin = perf_counter()
                 sync.ambilight()
+
                 self._fps = 1.0 / (perf_counter() - begin)
         except (KeyboardInterrupt, SystemExit):
             self._fps = -1

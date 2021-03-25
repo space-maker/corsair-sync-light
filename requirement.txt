@@ -1,0 +1,4 @@
+cuesdk==0.6.0
+d3dshot==0.1.5
+Pillow==7.1.2
+numpy==1.17.4
