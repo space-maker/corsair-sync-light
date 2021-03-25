@@ -14,18 +14,19 @@ class Screenshot:
 
     def mean_frequencies_color(self, max_row, max_column, current_row, current_column):
         r, g, b = 0, 0, 0
-        count_colors = (int((current_row + 1) * self.size_x / max_row) * self.size_x - int(current_row * self.size_x / max_row) + 1) *\
-                       (int((current_column + 1) * self.size_y / max_column) - int(current_column * self.size_y / max_column) + 1)
+    
+        sample_x = 10
+        sample_y = 10
+        
         n=0
-        for x in range(int(current_row * self.size_x / max_row), int((current_row + 1) * self.size_x / max_row), 1000):
-            for y in range(int(current_column * self.size_y / max_column), int((current_column + 1) * self.size_y / max_column), 1000):
+        for x in range(int(current_column * self.size_x / max_column), int((current_column + 1) * self.size_x / max_column), sample_x):
+            for y in range(int(current_row * self.size_y / max_row), int((current_row + 1) * self.size_y / max_row), sample_y):
                 rgb = self.img.getpixel((x, y))
                 r += rgb[0]
                 g += rgb[1]
                 b += rgb[2]
-                n += 1
+                n+=1
 
-        # print(count_colors, n)
         r //= n
         g //= n
         b //= n

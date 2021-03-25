@@ -26,8 +26,8 @@ class SyncLightCorsairHandler:
         while True:
             begin = perf_counter()
             sync.ambilight()
-            system("cls")
 
+            system("cls")
             print(1 / (perf_counter() - begin), "fps")
 
     def _map_keys(self, row):
